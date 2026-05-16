@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- WXT reads this meta tag and sets manifest.options_ui.open_in_tab.
+         The options page hosts five sections in a 2xl-wide container; the
+         Chrome embedded modal would clip the schema-probe and prefetch
+         panels, so we force a full tab. -->
+    <meta name="manifest.open_in_tab" content="true" />
+    <title>NetSuite Stock Lens: Options</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
+  </body>
+</html>
