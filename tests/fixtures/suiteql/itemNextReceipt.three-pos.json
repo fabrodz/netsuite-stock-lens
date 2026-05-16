@@ -1,0 +1,26 @@
+[
+  {
+    "tranid": "PO1001",
+    "trandate": "2026-05-01",
+    "vendor": "Acme Supply Co",
+    "quantity": 40,
+    "duedate": "2026-05-20",
+    "trxid": "901001"
+  },
+  {
+    "tranid": "PO1002",
+    "trandate": "2026-05-05",
+    "vendor": "Beta Parts Inc",
+    "quantity": 25,
+    "duedate": "2026-05-25",
+    "trxid": "901002"
+  },
+  {
+    "tranid": "PO1003",
+    "trandate": "2026-05-08",
+    "vendor": "Acme Supply Co",
+    "quantity": 60,
+    "duedate": "2026-06-02",
+    "trxid": "901003"
+  }
+]

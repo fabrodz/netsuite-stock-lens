@@ -1,0 +1,42 @@
+[
+  {
+    "tranid": "INV5005",
+    "trandate": "2026-05-12",
+    "customer": "Acme Corp",
+    "quantity": 4,
+    "rate": 19.99,
+    "type": "CustInvc"
+  },
+  {
+    "tranid": "INV5004",
+    "trandate": "2026-05-10",
+    "customer": "Beta Industries",
+    "quantity": 2,
+    "rate": 21.5,
+    "type": "CustInvc"
+  },
+  {
+    "tranid": "CS5003",
+    "trandate": "2026-05-09",
+    "customer": "Walk-in Customer",
+    "quantity": 1,
+    "rate": 24.99,
+    "type": "CashSale"
+  },
+  {
+    "tranid": "INV5002",
+    "trandate": "2026-05-05",
+    "customer": "Gamma LLC",
+    "quantity": 3,
+    "rate": 19.99,
+    "type": "CustInvc"
+  },
+  {
+    "tranid": "CM5001",
+    "trandate": "2026-05-03",
+    "customer": "Acme Corp",
+    "quantity": -1,
+    "rate": 19.99,
+    "type": "CustCred"
+  }
+]

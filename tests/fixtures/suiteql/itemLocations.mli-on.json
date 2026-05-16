@@ -1,0 +1,26 @@
+[
+  {
+    "location": "1",
+    "locationname": "Main Warehouse",
+    "quantityonhand": 60,
+    "quantitycommitted": 10,
+    "quantityavailable": 50,
+    "quantityonorder": 25
+  },
+  {
+    "location": "2",
+    "locationname": "East Coast",
+    "quantityonhand": 35,
+    "quantitycommitted": 5,
+    "quantityavailable": 30,
+    "quantityonorder": 15
+  },
+  {
+    "location": "3",
+    "locationname": "West Coast",
+    "quantityonhand": 25,
+    "quantitycommitted": 5,
+    "quantityavailable": 15,
+    "quantityonorder": 10
+  }
+]

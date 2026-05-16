@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+  NetSuite Stock Lens — E2E fixture.
+
+  This file imitates a NetSuite Saved Search results page just enough for
+  the extension's detection / hover / popup pipeline to exercise itself.
+  It is intentionally minimal:
+    - A header row inside <thead> that the detection MUST skip.
+    - Five data rows, each linking to /app/common/item/item.nl?id=NNN.
+    - A "page 2" anchor with id^="pagepicker" so pagination handling has
+      something to react to during the test (the test does not click it,
+      but the detection initialises with it present).
+
+  The page mounts a tiny `window.__nslMockSuiteQL` shim BEFORE the
+  extension's content script runs. The shim listens for the extension's
+  bridge postMessage protocol and returns pre-baked SuiteQL responses for
+  the four queries the popup issues (header, locations, next receipt,
+  recent sales). The popup never reaches the real `injected.js` because
+  the shim intercepts the message first.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Saved Search Results</title>
+    <style>
+      body { font: 13px system-ui; margin: 16px; }
+      table { border-collapse: collapse; }
+      th, td { padding: 4px 8px; border: 1px solid #ccc; }
+    </style>
+  </head>
+  <body>
+    <h1>Item Saved Search</h1>
+    <table id="results">
+      <thead>
+        <!--
+          Header row — detection should skip this one. The anchor inside is
+          intentionally formatted like an item link so a regression that
+          ignores the header heuristic would surface a stray detection.
+        -->
+        <tr class="uir-list-row-tr--header">
+          <th><a href="/app/common/item/item.nl?id=0">Item</a></th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/app/common/item/item.nl?id=1001">Widget A</a></td>
+          <td>InvtPart</td>
+        </tr>
+        <tr>
+          <td><a href="/app/common/item/item.nl?id=1002">Widget B</a></td>
+          <td>InvtPart</td>
+        </tr>
+        <tr>
+          <td><a href="/app/common/item/item.nl?id=1003">Widget C</a></td>
+          <td>InvtPart</td>
+        </tr>
+        <tr>
+          <td><a href="/app/common/item/item.nl?id=1004">Widget D</a></td>
+          <td>InvtPart</td>
+        </tr>
+        <tr>
+          <td><a href="/app/common/item/item.nl?id=1005">Widget E</a></td>
+          <td>InvtPart</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <a id="pagepicker1" href="#" data-pageindex="1">Page 1</a>
+      <a id="pagepicker2" href="#" data-pageindex="2">Page 2</a>
+    </div>
+  </body>
+</html>

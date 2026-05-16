@@ -1,0 +1,11 @@
+{
+  "id": "67890",
+  "itemid": "PART-101",
+  "displayname": "Replacement Part",
+  "itemtype": "InvtPart",
+  "qoh": 80,
+  "qcom": 10,
+  "qavail": 70,
+  "qord": 0,
+  "qbo": 0
+}

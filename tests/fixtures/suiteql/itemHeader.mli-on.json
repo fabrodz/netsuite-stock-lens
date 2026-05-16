@@ -1,0 +1,11 @@
+{
+  "id": "12345",
+  "itemid": "WIDGET-001",
+  "displayname": "Standard Widget",
+  "itemtype": "InvtPart",
+  "qoh": 120,
+  "qcom": 20,
+  "qavail": 95,
+  "qord": 50,
+  "qbo": 5
+}
