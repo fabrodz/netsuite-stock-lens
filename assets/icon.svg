@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>NetSuite Stock Lens</title>
+  <!-- Rounded square background. Teal-700 chosen for high contrast in the
+       Chrome toolbar against both light and dark themes. -->
+  <rect x="0" y="0" width="128" height="128" rx="24" ry="24" fill="#0F766E"/>
+
+  <!-- Stacked inventory boxes (white) — three layers suggesting stock levels. -->
+  <g fill="#FFFFFF">
+    <rect x="28" y="78" width="52" height="14" rx="3" ry="3"/>
+    <rect x="28" y="58" width="52" height="14" rx="3" ry="3" opacity="0.85"/>
+    <rect x="28" y="38" width="52" height="14" rx="3" ry="3" opacity="0.7"/>
+  </g>
+
+  <!-- Magnifying lens overlapping the boxes — represents the "Stock Lens" name. -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round">
+    <circle cx="86" cy="44" r="18" fill="#0F766E"/>
+    <line x1="100" y1="58" x2="110" y2="68"/>
+  </g>
+</svg>
