@@ -160,16 +160,18 @@ describe("HoverPopup cross-record tabs", () => {
     render(
       <HoverPopup itemId="1" accountId="1234567" anchor={makeAnchor()} onClose={() => undefined} />,
     );
-    await waitFor(() => expect(screen.getByText("Stock Lens")).toBeTruthy());
-    const tablist = await waitFor(() => screen.getByRole("tablist"));
+    // Wait for the loaded state directly. The header text "Stock Lens"
+    // is present even in the loading skeleton, so we need to anchor on
+    // something that only appears once the data finishes resolving. The
+    // 3 s timeout cushions slower CI runners where React + jsdom can
+    // take longer than the testing-library default to converge.
+    const tablist = await screen.findByRole("tablist", {}, { timeout: 3000 });
     expect(tablist).toBeTruthy();
-    // All three tabs render.
-    const inventoryTab = screen.getByRole("tab", { name: /inventory/i });
-    const recentSalesTab = screen.getByRole("tab", { name: /recent sales/i });
-    const demandTab = screen.getByRole("tab", { name: /demand/i });
-    expect(inventoryTab).toBeTruthy();
-    expect(recentSalesTab).toBeTruthy();
-    expect(demandTab).toBeTruthy();
+    // All three tabs render. Use findByRole so each lookup retries
+    // until present rather than failing synchronously on a mid-render.
+    const inventoryTab = await screen.findByRole("tab", { name: /inventory/i });
+    const recentSalesTab = await screen.findByRole("tab", { name: /recent sales/i });
+    const demandTab = await screen.findByRole("tab", { name: /demand/i });
     // Recent sales should be selected by default.
     expect(recentSalesTab.getAttribute("aria-selected")).toBe("true");
     expect(inventoryTab.getAttribute("aria-selected")).toBe("false");

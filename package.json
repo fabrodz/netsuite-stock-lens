@@ -1,6 +1,6 @@
 {
   "name": "netsuite-stock-lens",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Chrome extension that shows live NetSuite inventory data on hover inside transactions.",
   "type": "module",
   "license": "MIT",
